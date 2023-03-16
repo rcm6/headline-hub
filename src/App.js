@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Localisation from "./components/Localisation";
 import Header from "./components/Header";
