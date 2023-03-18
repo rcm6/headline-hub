@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import Carousel from "react-bootstrap/Carousel";
-import Container from "react-bootstrap/Container";
+import { Container, Carousel, Card, Stack } from "react-bootstrap";
 
 function Reddit() {
   const [subreddit, setSubreddit] = useState([]);
@@ -12,41 +11,45 @@ function Reddit() {
     let ignore = false;
 
     async function FetchDataHandler() {
-      const response = await axios.get("https://www.reddit.com/r/all/hot.json");
+      try {
+        const response = await axios.get("https://www.reddit.com/r/all.json");
 
-      const dataList = response.data;
+        const dataList = response.data;
 
-      const listObjs = dataList.data.children;
+        const listObjs = dataList.data.children;
 
-      console.log(listObjs);
+        console.log(listObjs);
 
-      const filteredList = listObjs.filter((list) => {
-        const thumbnailHeight = list.data.thumbnail_height;
-        const thumbnailString = list.data.thumbnail;
+        const filteredList = listObjs.filter((list) => {
+          const thumbnailHeight = list.data.thumbnail_height;
+          const thumbnailString = list.data.thumbnail;
 
-        if (thumbnailHeight !== null && thumbnailString.includes("https")) {
-          return list.data;
-        } else {
-          return false;
+          if (thumbnailHeight !== null && thumbnailString.includes("https")) {
+            return list.data;
+          } else {
+            return false;
+          }
+        });
+
+        console.log(filteredList);
+
+        const transformedList = filteredList.map((list) => {
+          return {
+            id: list.data.id,
+            title: list.data.title,
+            permalink: "https://www.reddit.com/" + list.data.permalink,
+            subreddit: list.data.subreddit,
+            image: list.data.thumbnail,
+          };
+        });
+
+        console.log(transformedList);
+
+        if (!ignore) {
+          setSubreddit(transformedList);
         }
-      });
-
-      console.log(filteredList);
-
-      const transformedList = filteredList.map((list) => {
-        return {
-          id: list.data.id,
-          title: list.data.title,
-          permalink: "https://www.reddit.com/" + list.data.permalink,
-          subreddit: list.data.subreddit,
-          image: list.data.thumbnail,
-        };
-      });
-
-      console.log(transformedList);
-
-      if (!ignore) {
-        setSubreddit(transformedList);
+      } catch (error) {
+        console.error("Error:", error);
       }
     }
 
@@ -58,24 +61,84 @@ function Reddit() {
     };
   }, [subreddit.id]);
 
-  const carouselStyle = {
-    width: "596px",
-    height: "296px%",
-    margin: "0 auto",
-  };
+  // const carouselItemStyle = {
+  //   width: "100%",
+  //   borderRadius: "10px",
+  //   backgroundPosition: "center",
+  //   backgroundSize: "cover",
+  // };
 
-  const carouselItemStyle = {
-    width: "100%",
-    height: "296px",
-    borderRadius: "10px",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-  };
+  // const carouselInner = {
+  //   width: "296px",
+  //   height: "100%",
+  //   margin: "0 auto",
+  // };
 
   return (
     <section id="section__reddit">
-      <Container>
-        <Carousel
+      <Container fluid>
+        <Carousel style={{ height: 500 }}>
+          {subreddit.map((post, index) => (
+            <Carousel.Item style={{ height: 500 }} key={index}>
+              {console.log(subreddit[index].subreddit)}
+              <Stack
+                direction="horizontal"
+                className="h-100 justify-content-center align-items-center"
+                gap={3}
+              >
+                <Card style={{ width: "18rem" }}>
+                  <Card.Body>
+                    <a href={post.permalink} target="__blank" rel="noreferrer">
+                      <img
+                        src={post.image}
+                        className="card-img-top"
+                        alt="..."
+                      />
+                    </a>
+                    <Card.Title>{subreddit[index].subreddit}</Card.Title>
+                    <Card.Text>{post.title}</Card.Text>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ width: "18rem" }}>
+                  <Card.Body>
+                    <a href={post.permalink} target="__blank" rel="noreferrer">
+                      <img
+                        src={post.image}
+                        className="card-img-top"
+                        alt="..."
+                      />
+                    </a>
+                    <Card.Title>{subreddit[index].subreddit}</Card.Title>
+                    <Card.Text>{post.title}</Card.Text>
+                  </Card.Body>
+                </Card>
+
+                <Card style={{ width: "18rem" }}>
+                  <Card.Body>
+                    <a href={post.permalink} target="__blank" rel="noreferrer">
+                      <img
+                        src={post.image}
+                        className="card-img-top"
+                        alt="..."
+                      />
+                    </a>
+                    <Card.Title>{subreddit[index].subreddit}</Card.Title>
+                    <Card.Text>{post.title}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Stack>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </Container>
+    </section>
+  );
+}
+
+export default Reddit;
+
+/* <Carousel
           className="carousel slide carousel-fade carousel-dark"
           style={carouselStyle}
         >
@@ -100,10 +163,58 @@ function Reddit() {
               </Carousel.Item>
             );
           })}
-        </Carousel>
-      </Container>
-    </section>
-  );
-}
+      </Carousel> */
 
-export default Reddit;
+/* 
+
+          <div
+          id="carouselExampleControls"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner" style={carouselInner}>
+            {subreddit.map((post, index) => {
+              return (
+                <div className="carousel-item active" key={index}>
+                  <div className="card">
+                    <img src={post.image} className="" alt="..." />
+                    <div className="card-body">
+                      <p className="card-text">
+                        <strong>r/{post.subreddit}</strong>
+                      </p>
+                      <p className="card-text">{post.title}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+
+      */
