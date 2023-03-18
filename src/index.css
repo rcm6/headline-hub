@@ -1,3 +1,7 @@
+:root {
+  --light-grey-background: #f1f1f1;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -15,5 +19,5 @@ body {
 
 #section__reddit {
   padding: 3rem 0 3rem 0;
-  background-color: pink;
+  background-color: var(--light-grey-background);
 }
