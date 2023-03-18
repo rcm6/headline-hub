@@ -21,8 +21,13 @@ function Reddit() {
       console.log(listObjs);
 
       const filteredList = listObjs.filter((list) => {
-        if (list.data.thumbnail_height !== null) {
-          return list;
+        const thumbnailHeight = list.data.thumbnail_height;
+        const thumbnailString = list.data.thumbnail;
+
+        if (thumbnailHeight !== null && thumbnailString.includes("https")) {
+          return list.data;
+        } else {
+          return false;
         }
       });
 
@@ -31,7 +36,8 @@ function Reddit() {
       const transformedList = filteredList.map((list) => {
         return {
           id: list.data.id,
-          permalink: list.data.permalink,
+          title: list.data.title,
+          permalink: "https://www.reddit.com/" + list.data.permalink,
           subreddit: list.data.subreddit,
           image: list.data.thumbnail,
         };
@@ -68,23 +74,29 @@ function Reddit() {
 
   return (
     <section id="section__reddit">
-      <div className="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Reddit</h3>
-      </div>
-
       <Container>
         <Carousel
-          className="carousel slide carousel-fade"
+          className="carousel slide carousel-fade carousel-dark"
           style={carouselStyle}
         >
           {subreddit.map((post, index) => {
             return (
               <Carousel.Item key={index}>
-                <img
-                  className="d-block"
-                  style={carouselItemStyle}
-                  src={post.image}
-                ></img>
+                <a href={post.permalink} target="__blank" rel="noreferrer">
+                  <img
+                    className="d-block"
+                    style={carouselItemStyle}
+                    src={post.image}
+                    alt=""
+                  ></img>
+                  <Carousel.Caption
+                    className="bg-dark text-white"
+                    style={{ opacity: 0.7 }}
+                  >
+                    <h3>r/{post.subreddit}</h3>
+                    <p>{post.title}</p>
+                  </Carousel.Caption>
+                </a>
               </Carousel.Item>
             );
           })}
