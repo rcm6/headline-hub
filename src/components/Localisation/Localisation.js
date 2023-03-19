@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import moment from "moment";
 
@@ -44,7 +43,7 @@ const response = await axios.get(url);
           //If user allows location service then fetch data & send it to fetchWeather function
           fetchWeather(position.coords.latitude, position.coords.longitude);
         })
-        .catch((err) => {
+        .catch((_err) => {
           //If user denies location service then send default lat/long to fetchWeather function
           fetchWeather(42.4337516, -84.019569);
           alert(
@@ -55,8 +54,10 @@ const response = await axios.get(url);
       alert('Geolocation not available');
     }
   }, []);
+
     //convert temperature to celcius
-    let conTemp = parseFloat(weather.temp) - 273.15;
+    //let conTemp = parseFloat(weather.temp) - 273.15;
+    //{conTemp.toFixed(0)} &#8451; {weather.descp} for {city},{' '}
 
 
 
@@ -68,7 +69,7 @@ const response = await axios.get(url);
               src={`https://openweathermap.org/img/wn/${weather.image}.png`}
               alt="..."
             />
-            {conTemp.toFixed(0)} &#8451; {weather.description} for {city},{' '}
+            {weather.temp} &#8451; {weather.descp} for {city},{' '}
             {weather.country} - {date}
           </div>
         </div>
@@ -83,7 +84,6 @@ const response = await axios.get(url);
       </div>
     );
   };
-
   
   export default Weather;
 
