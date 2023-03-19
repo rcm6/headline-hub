@@ -1,0 +1,25 @@
+.card {
+    margin:  15px 0;
+  }
+  .card-text, .card-title {
+    color: black;
+  }
+  .card-margin-right {
+    margin-right: 5px;
+  }
+  
+  /* card hover fx */
+  .card .overlay{
+    opacity: 0.5;
+  }
+  
+  .card:hover .overlay {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  
+  /* card buttons */
+  .card-buttons {
+    margin: 0;
+    padding: 0 10px 10px 10px;
+  }
