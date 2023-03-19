@@ -45,12 +45,52 @@ function Search() {
           <Modal.Title>Filter Options</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* Replace with your filter options */}
-          <p>Filter Options</p>
+          <div className="form-group">
+            <label htmlFor="category-select">Category</label>
+            <select
+              id="category-select"
+              className="form-control"
+            >
+              <option value="">Select a category</option>
+              <option value="business">Business</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="health">Health</option>
+              <option value="science">Science</option>
+              <option value="sports">Sports</option>
+              <option value="technology">Technology</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="language-select">Language</label>
+            <select
+              id="language-select"
+              className="form-control"
+            >
+              <option value="">Select a language</option>
+              <option value="en">English</option>
+              <option value="fr">French</option>
+              <option value="es">Spanish</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="sortby-select">Sort By</label>
+            <select
+              id="sortby-select"
+              className="form-control"
+            >
+              <option value="">Select a sort option</option>
+              <option value="publishedAt">Published At</option>
+              <option value="relevancy">Relevancy</option>
+              <option value="popularity">Popularity</option>
+            </select>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleFilterClose}>
             Close
+          </Button>
+          <Button variant="primary" >
+            Apply
           </Button>
         </Modal.Footer>
       </Modal>
