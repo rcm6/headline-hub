@@ -2,7 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { Container, Carousel, Card, Stack } from "react-bootstrap";
+import { Container, Carousel, Stack } from "react-bootstrap";
+
+import CardComponent from "./Card";
 
 function Reddit() {
   const [subreddit, setSubreddit] = useState([]);
@@ -80,53 +82,14 @@ function Reddit() {
         <Carousel style={{ height: 500 }}>
           {subreddit.map((post, index) => (
             <Carousel.Item style={{ height: 500 }} key={index}>
-              {console.log(subreddit[index].subreddit)}
               <Stack
                 direction="horizontal"
                 className="h-100 justify-content-center align-items-center"
                 gap={3}
               >
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <a href={post.permalink} target="__blank" rel="noreferrer">
-                      <img
-                        src={post.image}
-                        className="card-img-top"
-                        alt="..."
-                      />
-                    </a>
-                    <Card.Title>{subreddit[index].subreddit}</Card.Title>
-                    <Card.Text>{post.title}</Card.Text>
-                  </Card.Body>
-                </Card>
-
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <a href={post.permalink} target="__blank" rel="noreferrer">
-                      <img
-                        src={post.image}
-                        className="card-img-top"
-                        alt="..."
-                      />
-                    </a>
-                    <Card.Title>{subreddit[index].subreddit}</Card.Title>
-                    <Card.Text>{post.title}</Card.Text>
-                  </Card.Body>
-                </Card>
-
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <a href={post.permalink} target="__blank" rel="noreferrer">
-                      <img
-                        src={post.image}
-                        className="card-img-top"
-                        alt="..."
-                      />
-                    </a>
-                    <Card.Title>{subreddit[index].subreddit}</Card.Title>
-                    <Card.Text>{post.title}</Card.Text>
-                  </Card.Body>
-                </Card>
+                <CardComponent {...post} />
+                <CardComponent {...post} />
+                <CardComponent {...post} />
               </Stack>
             </Carousel.Item>
           ))}
