@@ -70,7 +70,7 @@ const Weather = () => {
             src={`https://openweathermap.org/img/wn/${weather.image}.png`}
             alt="..."
           />
-          {conTemp.toFixed(0)} &#8451; {weather.descp} for {city},{" "}
+          {conTemp.toFixed(0)} &#8451; {weather.description} for {city},{" "}
           {weather.country} - {date}
         </div>
       </div>
