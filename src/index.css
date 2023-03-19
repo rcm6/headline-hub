@@ -18,6 +18,17 @@ body {
 }
 
 #section__reddit {
-  padding: 3rem 0 3rem 0;
+  padding: 2rem 0 2rem 0;
   background-color: var(--light-grey-background);
 }
+
+/* @media screen and (min-width: 576px) {
+  .carousel-inner {
+    display: flex;
+    height: 100%;
+  }
+
+  .carousel {
+    flex: 0 0 calc(100% / 3);
+  }
+} */
