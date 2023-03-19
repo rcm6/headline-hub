@@ -13,8 +13,8 @@ const Weather = () => {
   const fetchWeather = async (lat, lon) => {
     const apiKey = process.env.REACT_APP_API_KEY_OPENWEATHER;
     //const apiKey = 'd1e2d0763204896fd894698f5c6e27ee';
-    //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.975426715554896&lon=-3.255184197169449&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    //const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.975426715554896&lon=-3.255184197169449&appid=${apiKey}`;
     const response = await axios.get(url);
     setWeather({
       description: response.data.weather[0].description,
