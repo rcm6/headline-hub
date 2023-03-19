@@ -59,6 +59,12 @@ const response = await axios.get(url);
     //let conTemp = parseFloat(weather.temp) - 273.15;
     //{conTemp.toFixed(0)} &#8451; {weather.descp} for {city},{' '}
 
+     //convert temperature to celcius
+  let conTemp = '';
+  if (weather) {
+    conTemp = parseFloat(weather.temp) - 273.15;
+  }
+
 
 
     const DisplayWeather = () => {
@@ -69,7 +75,7 @@ const response = await axios.get(url);
               src={`https://openweathermap.org/img/wn/${weather.image}.png`}
               alt="..."
             />
-            {weather.temp} &#8451; {weather.descp} for {city},{' '}
+    {conTemp.toFixed(0)} &#8451; {weather.descp} for {city},{' '}
             {weather.country} - {date}
           </div>
         </div>
