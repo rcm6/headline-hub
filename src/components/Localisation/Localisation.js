@@ -38,7 +38,7 @@ function Weather() {
 
   const apiCall = async (e) => {
     e.preventDefault();
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = process.env.REACT_APP_API_KEY_OPENWEATHER;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
     const req = axios.get(url);
     const res = await req;
