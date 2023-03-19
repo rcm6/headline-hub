@@ -5,8 +5,7 @@ import moment from "moment";
 
 //get the current date and time
 var date = moment()
-      .utcOffset('+05:30')
-      .format('YYYY-MM-DD hh:mm:ss a');
+.format('dddd, MMMM Do YYYY, h:mm a');
 
 // geolocation
 
