@@ -12,6 +12,22 @@ function Search() {
     setShowFilter(false);
   };
 
+  const handleApplyFilter = () => {
+    const categorySelect = document.getElementById("category-select");
+    const languageSelect = document.getElementById("language-select");
+    const sortBySelect = document.getElementById("sortby-select");
+
+    const selectedValues = {
+      category: categorySelect.value,
+      language: languageSelect.value,
+      sortBy: sortBySelect.value,
+    };
+
+    console.log(selectedValues);
+
+    setShowFilter(false);
+  };
+
   return (
     <div className="container">
       <div className="input-group mb-3">
@@ -47,10 +63,7 @@ function Search() {
         <Modal.Body>
           <div className="form-group">
             <label htmlFor="category-select">Category</label>
-            <select
-              id="category-select"
-              className="form-control"
-            >
+            <select id="category-select" className="form-control">
               <option value="">Select a category</option>
               <option value="business">Business</option>
               <option value="entertainment">Entertainment</option>
@@ -62,10 +75,7 @@ function Search() {
           </div>
           <div className="form-group">
             <label htmlFor="language-select">Language</label>
-            <select
-              id="language-select"
-              className="form-control"
-            >
+            <select id="language-select" className="form-control">
               <option value="">Select a language</option>
               <option value="en">English</option>
               <option value="fr">French</option>
@@ -74,10 +84,7 @@ function Search() {
           </div>
           <div className="form-group">
             <label htmlFor="sortby-select">Sort By</label>
-            <select
-              id="sortby-select"
-              className="form-control"
-            >
+            <select id="sortby-select" className="form-control">
               <option value="">Select a sort option</option>
               <option value="publishedAt">Published At</option>
               <option value="relevancy">Relevancy</option>
@@ -89,7 +96,7 @@ function Search() {
           <Button variant="secondary" onClick={handleFilterClose}>
             Close
           </Button>
-          <Button variant="primary" >
+          <Button variant="primary" onClick={handleApplyFilter}>
             Apply
           </Button>
         </Modal.Footer>
