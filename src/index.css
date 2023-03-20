@@ -22,6 +22,27 @@ body {
   background-color: var(--light-grey-background);
 }
 
+/* Navbar styling */
+#nav {
+  padding: 20px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: #f7cd46;
+}
+
+.nav-img {
+  padding: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 /* @media screen and (min-width: 576px) {
   .carousel-inner {
     display: flex;
