@@ -17,7 +17,29 @@ body {
   background-color: #f1f1f1;
 }
 
+#header {
+  padding: 3rem 0 0 0;
+}
+
+#footer {
+  padding: 3rem 0 0 0;
+}
+
+.mainweather {
+  padding: 3rem 0 0 0;
+}
+
+#section__search {
+  padding: 3rem 0 2rem 0;
+  background-color: var(--light-grey-background);
+}
+
 #section__reddit {
+  padding: 2rem 0 2rem 0;
+  background-color: var(--light-grey-background);
+}
+
+#section__news {
   padding: 2rem 0 2rem 0;
   background-color: var(--light-grey-background);
 }

@@ -1,9 +1,11 @@
-import React from "react";
+import Navbar from "../Navbar/Navbar";
+import Weather from "../Localisation/Weather";
 
 function Header() {
   return (
     <header id="header" className="">
-      Header
+      <Navbar />
+      <Weather />
     </header>
   );
 }

@@ -79,7 +79,7 @@ const Weather = () => {
 
   return (
     <div className="mainweather">
-      <div className="weather">{weather && <DisplayWeather />}</div>
+      <div className="weather text-center">{weather && <DisplayWeather />}</div>
     </div>
   );
 };
