@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import { Spinner } from "react-bootstrap";
 import "./styles.css";
 
 //get the current date and time
@@ -9,13 +10,12 @@ var date = moment().format("dddd, MMMM Do YYYY, h:mm a");
 const Weather = () => {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
+  const [loading, setLoading] = useState(true);
 
   //get the weather
   const fetchWeather = async (lat, lon) => {
     const apiKey = process.env.REACT_APP_API_KEY_OPENWEATHER;
-    //const apiKey = 'd1e2d0763204896fd894698f5c6e27ee';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-    //const url = `https://api.openweathermap.org/data/2.5/weather?lat=50.975426715554896&lon=-3.255184197169449&appid=${apiKey}`;
     const response = await axios.get(url);
     setWeather({
       description: response.data.weather[0].description,
@@ -25,6 +25,7 @@ const Weather = () => {
       image: response.data.weather[0].icon,
     });
     setCity(response.data.name);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -54,10 +55,6 @@ const Weather = () => {
   }, []);
 
   //convert temperature to celcius
-  //let conTemp = parseFloat(weather.temp) - 273.15;
-  //{conTemp.toFixed(0)} &#8451; {weather.descp} for {city},{' '}
-
-  //convert temperature to celcius
   let conTemp = "";
   if (weather) {
     conTemp = parseFloat(weather.temp) - 273.15;
@@ -66,41 +63,40 @@ const Weather = () => {
   const DisplayWeather = () => {
     return (
       <div>
-        <div>
-          <img
-            src={`https://openweathermap.org/img/wn/${weather.image}.png`}
-            alt="..."
-          />
-          {conTemp.toFixed(0)} &#8451; {weather.description} for {city},{" "}
-          {weather.country} - {date}
+        <div class="card text-start" id="weather-card">
+          <div className="cities">
+            <div className="city">
+              <h2 className="card-title city-name">
+                <span>{city}</span>
+                <sup>{weather.country}</sup>
+              </h2>
+              <p className="card-text city-temp">{conTemp.toFixed(0)} &#8451;</p>
+              <img
+                src={`https://openweathermap.org/img/wn/${weather.image}@2x.png`}
+                alt="..."
+              />
+              <div className="card-body">
+                <p className="card-text">{date}</p>
+              </div>
+              <p className="card-footer bg-transparent .weather-description">
+                {weather.description}
+              </p>
+            </div>
+          </div>
         </div>
-
-                <div class="card text-start" id="weather-card">
-                  <div className="cities">
-                  <div className="city">
-                <h2 class="card-title city-name"><span>{city}</span><sup>{weather.country}</sup></h2>
-                <p class="card-text city-temp">{conTemp.toFixed(0)} &#8451;</p>
-
-
-                <img
-            src={`https://openweathermap.org/img/wn/${weather.image}@2x.png`}
-            alt="..."
-          />                <div class="card-body">
-                            <p class="card-text">{date}</p>
-
-                </div>
-                <p class="card-footer bg-transparent .weather-description">{weather.description}</p>
-                </div>
-                </div>
-                </div>
-
       </div>
     );
   };
 
   return (
     <div className="mainweather">
-      <div className="weather text-center">{weather && <DisplayWeather />}</div>
+      <div className="weather text-center">
+        {loading ? (
+          <Spinner animation="border" variant="primary" />
+        ) : (
+          <DisplayWeather />
+        )}
+      </div>
     </div>
   );
 };
