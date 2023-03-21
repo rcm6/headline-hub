@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
-import "./styles.css";
 
 //get the current date and time
 var date = moment().format("dddd, MMMM Do YYYY, h:mm a");
@@ -74,26 +73,6 @@ const Weather = () => {
           {conTemp.toFixed(0)} &#8451; {weather.description} for {city},{" "}
           {weather.country} - {date}
         </div>
-
-                <div class="card text-start" id="weather-card">
-                  <div className="cities">
-                  <div className="city">
-                <h2 class="card-title city-name"><span>{city}</span><sup>{weather.country}</sup></h2>
-                <p class="card-text city-temp">{conTemp.toFixed(0)} &#8451;</p>
-
-
-                <img
-            src={`https://openweathermap.org/img/wn/${weather.image}@2x.png`}
-            alt="..."
-          />                <div class="card-body">
-                            <p class="card-text">{date}</p>
-
-                </div>
-                <p class="card-footer bg-transparent .weather-description">{weather.description}</p>
-                </div>
-                </div>
-                </div>
-
       </div>
     );
   };

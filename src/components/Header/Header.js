@@ -5,7 +5,6 @@ function Header() {
   return (
     <header id="header" className="">
       <Navbar />
-      <Weather />
     </header>
   );
 }
