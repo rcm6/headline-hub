@@ -6,9 +6,7 @@ function Header() {
     <header id="header" className="">
       
       <Navbar />
-      
-      <Weather />
-      
+            
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="jumbo-title">Headline Hub</h1>
