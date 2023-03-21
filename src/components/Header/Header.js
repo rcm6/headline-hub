@@ -1,5 +1,4 @@
 import Navbar from "../Navbar/Navbar";
-import Weather from "../Localisation/Weather";
 
 function Header() {
   return (

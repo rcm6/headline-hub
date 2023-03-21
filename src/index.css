@@ -19,24 +19,36 @@ body {
 }
 
 #header {
+  background-color: #f1f1f1;
   padding: 3rem 0 0 0;
 }
 
 .jumbo-title {
-  font-size: 130px;
-  text-transform: uppercase;
-  color: #de5935;
-  text-align: center;
+  margin: 0px;
   font-family: Josefin Sans;
+  color: #de5935;
+  font-size: 130px;
   font-weight: 900;
+  text-align: center;
+  padding-top: 100px;
 }
 
 #footer {
-  padding: 3rem 0 0 0;
+  padding: 10px;
 }
 
-.mainweather {
-  padding: 3rem 0 0 0;
+.footer-content {
+  background-color: #5ac3b0;
+  text-align: center;
+  color: white;
+  font-family: Cardo;
+  font-size: large;
+  font-weight: bold;
+}
+
+.footer-img {
+  padding: 10px;
+  padding-top: 5px;
 }
 
 #section__search {
