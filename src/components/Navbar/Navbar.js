@@ -38,6 +38,7 @@ import image3 from '../../images/weather-icon.png';
 import image4 from '../../images/profile-icon.png';
 import { Modal, Button } from "react-bootstrap";
 import Weather from "../Localisation/Weather";
+import LoginForm from '../LoginForm/LoginForm';
 
 function Navbar() {
   const [showModal1, setShowModal1] = useState(false);
@@ -73,7 +74,7 @@ function Navbar() {
 
       <Modal show={showModal1} onHide={() => setShowModal1(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal placeholder 1</Modal.Title>
+          <Modal.Title>Weather Modal</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 
@@ -89,10 +90,10 @@ function Navbar() {
 
       <Modal show={showModal2} onHide={() => setShowModal2(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal placeholder 2</Modal.Title>
+          <Modal.Title>Loaction Modal</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Modal placeholder 2</p>
+          <p>Modal placeholder</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal2(false)}>
@@ -103,10 +104,12 @@ function Navbar() {
 
       <Modal show={showModal3} onHide={() => setShowModal3(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal placeholder 3</Modal.Title>
+          <Modal.Title>Login modal</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Modal placeholder 3</p>
+
+          <LoginForm />
+          
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal3(false)}>
