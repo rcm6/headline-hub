@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./style.css";
 
-const News = () => {
+const News = ({ query = "" }) => {
   const [news, setNews] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const apiKey = process.env.REACT_APP_API_KEY_PERIGON;
-  const url = `https://api.goperigon.com/v1/all?apiKey=${apiKey}&from=2023-03-18&country=gb&sourceGroup=top100&showNumResults=true&showReprints=false&paywall=false&excludeLabel=Non-news&excludeLabel=Opinion&excludeLabel=Paid News&excludeLabel=Roundup&excludeLabel=Press Release&sortBy=date`;
+  const url = `https://api.goperigon.com/v1/all?apiKey=${apiKey}&q=${query}&from=2023-03-18&country=gb&sourceGroup=top100&showNumResults=true&showReprints=false&paywall=false&excludeLabel=Non-news&excludeLabel=Opinion&excludeLabel=Paid News&excludeLabel=Roundup&excludeLabel=Press Release&sortBy=date`;
   const fetchNews = async () => {
     const response = await axios.get(url);
     setNews(response.data.articles);
