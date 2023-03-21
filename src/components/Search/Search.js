@@ -41,12 +41,11 @@ function Search() {
             disabled
           />
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-outline-secondary icon"
             type="button"
             id="search-button"
             disabled
-          >
-            Search
+          ><i class="fa fa-search"></i>
           </button>
           <button
             className="btn btn-outline-secondary"
