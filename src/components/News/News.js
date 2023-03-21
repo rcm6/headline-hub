@@ -22,8 +22,11 @@ const News = () => {
         <div className="row hidden-md-up">
           {showResults && (
             <div className="row hidden-md-up">
-              {news.map((article) => (
-                <div className="col-lg-4 col-md-6 col-sm-12 d-flex align-self-stretch">
+              {news.map((article, index) => (
+                <div
+                  className="col-lg-4 col-md-6 col-sm-12 d-flex align-self-stretch"
+                  key={index}
+                >
                   <div key={article.id} className="card">
                     <img
                       className="card-img-top overlay"
