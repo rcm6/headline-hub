@@ -3,8 +3,8 @@ import Navbar from "../Navbar/Navbar";
 function Header() {
   return (
     <header id="header" className="">
-      <Navbar />
       
+      <Navbar />
             
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
