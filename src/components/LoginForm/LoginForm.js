@@ -5,7 +5,6 @@ function LoginForm() {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Login Form</Card.Title>
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
