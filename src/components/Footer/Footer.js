@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import image5 from '../../images/GitHub-icon.png';
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
 function Footer() {
   const [showModal1, setShowModal1] =useState(false);
   return (
     <footer id="footer" className="footer-content">
-      <img src={image5} alt="GitHub icon" className="footer-img" onClick={() => setShowModal1(true)} /><br></br>
+      <img src={image5} alt="GitHub logo" className="footer-img" onClick={() => setShowModal1(true)} /><br></br>
       © 2023 Copyright || All Rights Reserved
 
       <Modal show={showModal1} onHide={() => setShowModal1(false)} dialogClassName="github-modal">
@@ -31,5 +31,7 @@ function Footer() {
     </footer>
   );
 }
+
+//TODO add modal to GitHub icon
 
 export default Footer;
