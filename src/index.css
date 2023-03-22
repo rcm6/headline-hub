@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans:wght@100;300;700&family=Open+Sans:wght@300&family=Playfair+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans:wght@100;300;700&family=Open+Sans:wght@300&family=Playfair+Display&display=swap");
 
 @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
@@ -13,8 +13,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Josefin Sans", "Open Sans", "Cardo",
-  "Playfair Display", sans-serif;
+  font-family: "Josefin Sans", "Cardo", "Open Sans", "Playfair Display",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f1f1f1;
@@ -28,7 +28,7 @@ body {
 
 .jumbo-title {
   margin: 0px;
-  font-family: Josefin Sans;
+  font-family: "Josefin Sans";
   color: #de5935;
   font-size: 14vw;
   font-weight: 900;
@@ -45,7 +45,7 @@ body {
   background-color: #5ac3b0;
   text-align: center;
   color: white;
-  font-family: Cardo;
+  font-family: "Cardo";
   font-size: large;
   font-weight: bold;
 }
@@ -67,16 +67,16 @@ body {
 #section__reddit {
   padding: 2rem 0 2rem 0;
   background-color: var(--light-grey-background);
-}
-
-#section__subreddit-feed {
-  padding: 3rem 0 2rem 0;
-  background-color: var(--light-grey-background);
+  font-family: "Playfair Display";
 }
 
 #section__news {
   padding: 2rem 0 2rem 0;
   background-color: var(--light-grey-background);
+}
+
+.section-headings {
+  margin-bottom: 1.2rem;
 }
 
 /* Navbar styling */
