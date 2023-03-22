@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import image5 from '../../images/GitHub-icon.png';
 import { Modal, Button } from "react-bootstrap";
 
