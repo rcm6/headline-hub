@@ -27,7 +27,7 @@ const News = ({ query = "" }) => {
     setShowResults(true);
   };
     fetchNews();
-  },[url]);
+  },[]);
   */
 
   return (
