@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-function Search(onSearchQuery) {
+function Search({ onSearchQuery }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilter, setShowFilter] = useState(false);
 
