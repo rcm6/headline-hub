@@ -27,17 +27,14 @@ body {
 }
 
 .jumbo-title {
-  padding-top: 100px;
-  font-size: 130px;
   text-transform: uppercase;
   color: #de5935;
   text-align: center;
   margin: 0px;
   font-family: "Josefin Sans";
   color: #de5935;
-  font-size: 14vw;
+  font-size: 10vw;
   font-weight: 900;
-  text-align: center;
   padding-top: 120px;
 }
 
@@ -121,6 +118,10 @@ body {
   padding-bottom: 25px;
 }
 
+.nav-img:hover {
+  opacity: 0.7;
+}
+
 /* Search bar styling */
 #section__search .form-control {
   font-family: Open Sans;
@@ -149,15 +150,13 @@ body {
   box-shadow: 0 0 10px #f7cd46;
 }
 
-/*add search button to this also */ #filter-button:hover {
+#search-button #filter-button:hover {
   border-color: #f7cd46;
   box-shadow: 0 0 10px #f7cd46;
   background-color: #f7cd46;
 }
 
 /* Footer modal styling */
-/* TODO remove link styling from LI, center GitHub logo, remove grey line from footer */
-
 .modal-header {
   background-color: #5ac3b0;
   width: 100%;
@@ -168,6 +167,14 @@ body {
   font-family: Cardo;
   text-align: center;
   text-decoration: none !important;
+  color: black;
+}
+
+.modal-content ul li a{
+  text-decoration: none;
+}
+.modal-content li {
+  list-style: none;
 }
 
 .modal-button {
