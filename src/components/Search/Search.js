@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-function Search() {
+function Search({ onSearchQuery }) {
+  const [searchQuery, setSearchQuery] = useState("");
   const [showFilter, setShowFilter] = useState(false);
+
+  const handleSearch = () => {
+    onSearchQuery(searchQuery);
+  };
 
   const handleFilterOpen = () => {
     setShowFilter(true);
@@ -38,15 +43,15 @@ function Search() {
             placeholder="Search news..."
             aria-label="Search news"
             aria-describedby="search-button"
-            disabled
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-outline-secondary icon"
             type="button"
             id="search-button"
-            disabled
-          >
-            Search
+            onClick={handleSearch}
+          ><i class="fa fa-search"></i>
           </button>
           <button
             className="btn btn-outline-secondary"
