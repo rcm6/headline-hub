@@ -1,5 +1,5 @@
-//import React, { useState, useEffect } from "react"; // for live uncomment this line and remove fetch news button
-import React, { useState } from "react"; // for dev comment this line and add button
+import React, { useState, useEffect } from "react"; // for live uncomment this line and remove fetch news button
+//import React, { useState } from "react"; // for dev comment this line and add button
 import axios from "axios";
 import moment from "moment";
 import "./style.css";
@@ -12,14 +12,15 @@ const News = ({ query = "" }) => {
   
 
   //comment out below block for live
+  /*
   const fetchNews = async () => {
     const response = await axios.get(url);
     setNews(response.data.articles);
     setShowResults(true);
-  };
+  };*/
 
   //uncomment the following for live and remove fetch news button
-  /*
+  
   useEffect(() => {
   const fetchNews = async () => {
     const response = await axios.get(url);
@@ -28,14 +29,12 @@ const News = ({ query = "" }) => {
   };
     fetchNews();
   },[]);
-  */
+  
 
   return (
     <section id="section__news">
       <div className="container">
-      <button className="btn btn-primary" onClick={fetchNews}>
-          Fetch News
-        </button>
+      
         <div className="row hidden-md-up">
           {showResults && (
             <div className="row hidden-md-up">
