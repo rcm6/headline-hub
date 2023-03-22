@@ -3,14 +3,11 @@
 function Header() {
   return (
     <header id="header" className="container-fluid">
-      
-            
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="jumbo-title">Headline Hub</h1>
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="jumbo-title">Headline Hub</h1>
         </div>
       </div>
-
     </header>
   );
 }
