@@ -72,9 +72,7 @@ const Weather = () => {
               </h2>
               <p className="card-text city-temp">{conTemp.toFixed(0)} &#8451;</p>
               <img
-                src={`https://openweathermap.org/img/wn/${weather.image}@2x.png`}
-                alt="..."
-              />
+              src={`./weather-icons/${weather.image}.svg`} width="300px" alt="..." />
               <div className="card-body">
                 <p className="card-text">{date}</p>
               </div>
