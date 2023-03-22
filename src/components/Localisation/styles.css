@@ -2,28 +2,15 @@
 
     width: 350px;
     border-radius: 20px;
-    background: var(--text_light);
-    color: var(--text_med);
-
 }
-
-.ajax-section {
-    margin: 70px 0 20px;
-  }
-
   
 .city {
-    position: relative;
+    position: relative!important;
     padding: 40px 10% 0 10%;
-    background: var(--text_light);
-    color: var(--text_med);
   }
-  
-
   
 .weather-description {
     margin-top: 10px;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
   }
   
@@ -31,7 +18,6 @@
     font-size: 5rem;
     font-weight: bold;
     margin-top: 10px;
-    color: var(--text_dark);
   }
   
 .city sup {
@@ -42,12 +28,5 @@
     padding: 0.2em 0.8em;
     margin-left:.2em;
     border-radius: 30px;
-    color: var(--text_light);
     background: orange;
-  }
-  
-.city-icon {
-    margin-top: 10px;
-    width: 100px;
-    height: 100px;
   }
