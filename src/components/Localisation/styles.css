@@ -1,0 +1,32 @@
+#weather-card{
+
+    width: 350px;
+    border-radius: 20px;
+}
+  
+.city {
+    position: relative!important;
+    padding: 40px 10% 0 10%;
+  }
+  
+.weather-description {
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+  }
+  
+.city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+.city sup {
+    font-size: 0.5em;
+  }
+  
+.city-name sup {
+    padding: 0.2em 0.8em;
+    margin-left:.2em;
+    border-radius: 30px;
+    background: orange;
+  }
