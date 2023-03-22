@@ -45,7 +45,7 @@ function Navbar() {
           
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal1(false)}>
+          <Button variant="secondary" onClick={() => setShowModal1(false)} className="modal-button">
             Close
           </Button>
         </Modal.Footer>
@@ -61,7 +61,7 @@ function Navbar() {
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal2(false)}>
+          <Button variant="secondary" onClick={() => setShowModal2(false)} className="modal-button">
             Close
           </Button>
         </Modal.Footer>
@@ -77,7 +77,7 @@ function Navbar() {
           
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal3(false)}>
+          <Button variant="secondary" onClick={() => setShowModal3(false)} className="modal-button">
             Close
           </Button>
         </Modal.Footer>

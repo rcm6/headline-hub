@@ -50,10 +50,6 @@ body {
   padding: 10px;
 }
 
-.footer-img:hover {
-  opacity: 0.85;
-}
-
 .footer-content {
   padding-bottom: 10px;
   padding: 10px;
@@ -128,7 +124,7 @@ body {
   font-size: large;
   margin: 0;
   border: 10px solid #5ac3b0;
-  height: 60px;
+  height: 62px;
   width: 80%!important;
   padding: 2px 23px 2px 30px;
   outline: 0;
@@ -146,14 +142,14 @@ body {
 }
 
 #section__search .form-control:hover {
-  border-color: #f7cd46;
-  box-shadow: 0 0 10px #f7cd46;
+  border-color: #f7cd46 !important;
+  box-shadow: 0 0 10px #f7cd46 !important;
 }
 
-#search-button #filter-button:hover {
-  border-color: #f7cd46;
-  box-shadow: 0 0 10px #f7cd46;
-  background-color: #f7cd46;
+#search-button:hover, #filter-button:hover {
+  border-color: #f7cd46 !important;
+  box-shadow: 0 0 10px #f7cd46 !important;
+  background-color: #f7cd46 !important;
 }
 
 /* Footer modal styling */
@@ -167,12 +163,19 @@ body {
   font-family: Cardo;
   text-align: center;
   text-decoration: none !important;
-  color: black;
 }
 
 .modal-content ul li a{
   text-decoration: none;
+  color: black;
 }
+
+.modal-content ul {
+  margin-left:0;
+  padding-left:0;
+  list-style-position: inside
+}
+
 .modal-content li {
   list-style: none;
 }
@@ -187,5 +190,7 @@ body {
 }
 
 .modal-button:hover {
-  
+  background-color: white !important;
+  border-color: #de5935 !important;
+  color: #de5935 !important;
 }

@@ -13,7 +13,7 @@ function Location() {
           placeholder="City name"
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="modal-button mt-3">
         Submit
       </Button>
     </Form>
