@@ -40,7 +40,7 @@ There is no testing required for this application.
 
 ## Image of the Application
 
-image goes here
+![Headline Hub Screen Capture](/headline-hub-screen-capture.PNG?raw=true)
 
 ## Github
 
@@ -48,7 +48,8 @@ https://github.com/rcm6/headline-hub
 
 ## Deployed on Netlify
 
-Link to netlify goes here
+Dev branch deploy: [Dev Deploy](https://iridescent-biscotti-3b4860.netlify.app/)
+Main branch deploy: [Main Deploy](https://verdant-taffy-d89702.netlify.app/)
 
 ## Questions
 
