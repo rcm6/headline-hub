@@ -22,7 +22,6 @@ function App() {
       <Wrapper>
         <News query={searchQuery} />
         <Reddit />
-        <News />
       </Wrapper>
       <Footer />
     </div>
