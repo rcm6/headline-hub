@@ -47,12 +47,11 @@ function Search({ onSearchQuery }) {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <button
-          className="btn btn-outline-secondary"
-          type="button"
-          id="search-button"
-          onClick={handleSearch}
-          >
-            Search
+            className="btn btn-outline-secondary icon"
+            type="button"
+            id="search-button"
+            onClick={handleSearch}
+          ><i class="fa fa-search"></i>
           </button>
           <button
             className="btn btn-outline-secondary"
