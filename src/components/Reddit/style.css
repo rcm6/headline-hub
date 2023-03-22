@@ -67,3 +67,7 @@
 .reddit-article .article-title {
   color: var(--dark-grey);
 }
+
+.reddit-card-link {
+  text-decoration: none;
+}

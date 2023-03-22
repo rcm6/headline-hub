@@ -17,7 +17,7 @@ function Footer() {
           <ul dialogClassName="modal-content">
             <li dialogClassName="modal-li"><a href="https://github.com/rcm6/headline-hub">Headline Hub repository</a></li>
             <li dialogClassName="modal-li"><a href="https://github.com/rcm6">Russell Coleman GitHub profile</a></li>
-            <li dialogClassName="modal-li"><a href="https://github.com/Sho-ayb">Sho'ayb Choudry GitHub profile</a></li>
+            <li dialogClassName="modal-li"><a href="https://github.com/Sho-ayb">Sho'ayb Choudhry GitHub profile</a></li>
             <li ><a href="https://github.com/Nikki1162" dialogClassName="modal-link">Nikki Boyle GitHub profile</a></li>
           </ul>
           
@@ -31,7 +31,5 @@ function Footer() {
     </footer>
   );
 }
-
-//TODO add modal to GitHub icon
 
 export default Footer;

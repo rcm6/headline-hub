@@ -16,7 +16,7 @@ function LoginForm() {
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" className="modal-button mt-3">
             Login
           </Button>
         </Form>
