@@ -5,7 +5,7 @@ import { Spinner } from "react-bootstrap";
 import "./styles.css";
 
 //get the current date and time
-var date = moment().format("dddd, MMMM Do YYYY, h:mm a");
+var date = moment().format("dddd, MMMM Do YYYY");
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
@@ -63,21 +63,21 @@ const Weather = () => {
   const DisplayWeather = () => {
     return (
       <div>
-        <div class="card text-start" id="weather-card">
+        <div className="card text-start" id="weather-card">
           <div className="cities">
             <div className="city">
               <h2 className="card-title city-name">
                 <span>{city}</span>
                 <sup>{weather.country}</sup>
               </h2>
-              <p className="card-text city-temp">{conTemp.toFixed(0)} &#8451;</p>
+              <p className="card-text city-temp">{conTemp.toFixed(0)}&#8451;</p>
               <img
               src={`./weather-icons/${weather.image}.svg`} width="300px" alt="..." />
               <div className="card-body">
                 <p className="card-text">{date}</p>
               </div>
               <p className="card-footer bg-transparent .weather-description">
-                {weather.description}
+                {weather.description.toUpperCase()}
               </p>
             </div>
           </div>
