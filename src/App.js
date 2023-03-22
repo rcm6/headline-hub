@@ -15,7 +15,6 @@ function App() {
       <Search />
       <Wrapper>
         <Reddit />
-        <SubredditFeed />
         <News />
       </Wrapper>
       <Footer />
