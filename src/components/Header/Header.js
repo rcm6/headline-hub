@@ -1,17 +1,13 @@
-import Navbar from "../Navbar/Navbar";
+//import Navbar from "../Navbar/Navbar";
 
 function Header() {
   return (
-    <header id="header" className="">
-      
-      <Navbar />
-      
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="jumbo-title">Headline Hub</h1>
+    <header id="header" className="container-fluid">
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="jumbo-title">Headline Hub</h1>
         </div>
       </div>
-
     </header>
   );
 }
