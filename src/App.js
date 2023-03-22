@@ -1,5 +1,6 @@
 //import Navbar from "./components/Navbar/Navbar";
 //import Localisation from "./components/Localisation/Weather";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 import Wrapper from "./components/Wrapper/Wrapper";
@@ -9,14 +10,19 @@ import News from "./components/News/News";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchQuery = (query) => {
+    setSearchQuery(query);
+  };
   return (
     <div>
       <Header />
-      <Search />
+      <Search onSearchQuery={handleSearchQuery} />
       <Wrapper>
         <Reddit />
         <SubredditFeed />
-        <News />
+        <News query={searchQuery} />
       </Wrapper>
       <Footer />
     </div>

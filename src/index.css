@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans:wght@100;300;700&family=Open+Sans:wght@300&family=Playfair+Display&display=swap');
 
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
 :root {
   --light-grey-background: #f1f1f1;
 }
@@ -17,7 +19,9 @@ body {
   background-color: #f1f1f1;
 }
 
+/* Header styling */
 #header {
+  background-color: #f1f1f1;
   padding: 3rem 0 0 0;
 }
 
@@ -27,10 +31,16 @@ body {
   text-transform: uppercase;
   color: #de5935;
   text-align: center;
+  margin: 0px;
   font-family: Josefin Sans;
+  color: #de5935;
+  font-size: 150px;
   font-weight: 900;
+  text-align: center;
+  padding-top: 120px;
 }
 
+/* Footer styling */
 #footer {
   font-family: Cardo;
   background-color: #5ac3b0;
@@ -48,10 +58,25 @@ body {
 
 .footer-content {
   padding-bottom: 10px;
+  padding: 10px;
 }
 
-.mainweather {
-  padding: 3rem 0 0 0;
+.footer-content {
+  background-color: #5ac3b0;
+  text-align: center;
+  color: white;
+  font-family: Cardo;
+  font-size: large;
+  font-weight: bold;
+}
+
+.footer-img {
+  padding: 10px;
+  padding-top: 5px;
+}
+
+.footer-img:hover {
+  opacity: 0.8;
 }
 
 #section__search {
@@ -95,13 +120,64 @@ body {
   padding-bottom: 25px;
 }
 
-/* @media screen and (min-width: 576px) {
-  .carousel-inner {
-    display: flex;
-    height: 100%;
-  }
+/* Search bar styling */
+#section__search .form-control {
+  font-family: Open Sans;
+  font-size: large;
+  margin: 0;
+  border: 10px solid #5ac3b0;
+  height: 60px;
+  width: 80%!important;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #ffffff;
+}
 
-  .carousel {
-    flex: 0 0 calc(100% / 3);
-  }
-} */
+#search-button, #filter-button {
+  margin: 0;
+  display: block;
+  font-family: Josefin Sans;
+  font-size: larger;
+  border: 10px solid #5ac3b0;
+  background-color: #5ac3b0;
+  color: white;
+}
+
+#section__search .form-control:hover {
+  border-color: #f7cd46;
+  box-shadow: 0 0 10px #f7cd46;
+}
+
+/*add search button to this also */ #filter-button:hover {
+  border-color: #f7cd46;
+  box-shadow: 0 0 10px #f7cd46;
+  background-color: #f7cd46;
+}
+
+/* Footer modal styling */
+/* TODO remove link styling from LI, center GitHub logo, remove grey line from footer */
+
+.modal-header {
+  background-color: #5ac3b0;
+  width: 100%;
+}
+
+.modal-content {
+  align-items: center;
+  font-family: Cardo;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.modal-button {
+  background-color: #de5935 !important;
+  border-color: #de5935 !important;
+  font-size: larger !important;
+  font-family: Open Sans !important;
+  font-weight: bold !important;
+  border-radius: 15px;;
+}
+
+.modal-button:hover {
+  
+}
