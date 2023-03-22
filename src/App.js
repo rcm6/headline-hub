@@ -1,4 +1,4 @@
-//import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 //import Localisation from "./components/Localisation/Weather";
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
@@ -16,13 +16,14 @@ function App() {
     setSearchQuery(query);
   };
   return (
-    <div>
+    <div className="container-fluid">
+      <Navbar />
       <Header />
       <Search onSearchQuery={handleSearchQuery} />
       <Wrapper>
+        <News query={searchQuery} />
         <Reddit />
         <SubredditFeed />
-        <News query={searchQuery} />
       </Wrapper>
       <Footer />
     </div>

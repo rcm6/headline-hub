@@ -1,10 +1,9 @@
-import Navbar from "../Navbar/Navbar";
+//import Navbar from "../Navbar/Navbar";
 
 function Header() {
   return (
-    <header id="header" className="">
+    <header id="header" className="container-fluid">
       
-      <Navbar />
             
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
