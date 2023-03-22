@@ -13,11 +13,7 @@ const SubredditFeed = () => {
   useEffect(() => {
     async function FetchDataHandler() {
       try {
-        const response = await axios.get(`${baseURL}${subreddit}.json`);
-
-        {
-          console.log(response);
-        }
+        const response = await axios(`${baseURL}${subreddit}.json`);
 
         const limit = 10;
         setArticles(
