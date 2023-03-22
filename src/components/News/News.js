@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+//import React, { useState, useEffect } from "react"; // for live uncomment this line and remove fetch news button
+import React, { useState } from "react"; // for dev comment this line and add button
+
 import axios from "axios";
 import "./style.css";
 
@@ -7,16 +9,31 @@ const News = ({ query = "" }) => {
   const [showResults, setShowResults] = useState(false);
   const apiKey = process.env.REACT_APP_API_KEY_PERIGON;
   const url = `https://api.goperigon.com/v1/all?apiKey=${apiKey}&q=${query}&from=2023-03-18&country=gb&sourceGroup=top100&showNumResults=true&showReprints=false&paywall=false&excludeLabel=Non-news&excludeLabel=Opinion&excludeLabel=Paid News&excludeLabel=Roundup&excludeLabel=Press Release&sortBy=date`;
+  
+
+  //comment out below block for live
   const fetchNews = async () => {
     const response = await axios.get(url);
     setNews(response.data.articles);
     setShowResults(true);
   };
 
+  //uncomment the following for live and remove fetch news button
+  /*
+  useEffect(() => {
+  const fetchNews = async () => {
+    const response = await axios.get(url);
+    setNews(response.data.articles);
+    setShowResults(true);
+  };
+    fetchNews();
+  },[url]);
+  */
+
   return (
     <section id="section__news">
       <div className="container">
-        <button className="btn btn-primary" onClick={fetchNews}>
+      <button className="btn btn-primary" onClick={fetchNews}>
           Fetch News
         </button>
         <div className="row hidden-md-up">
